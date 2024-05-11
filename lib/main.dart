@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/StartScreen.dart';
+import 'package:quiz_app/questions_screen.dart';
+import 'package:quiz_app/start_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget{
         fontFamily: 'Roboto'
         ),
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home: QuestionsSceen(),
     );
   }
   
