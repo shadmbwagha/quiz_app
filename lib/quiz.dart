@@ -10,15 +10,36 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  Widget activeScreen = HomeScreen();
+  var activeScreen = 'start-screen';
 
-  void switchScreen(){
+  void switchScreen() {
     setState(() {
-      activeScreen = QuestionsSceen();
+      activeScreen = 'questions-screen';
     });
   }
+
+  // Widget? activeScreen;
+
+// @override
+// void initState() {
+//     activeScreen = HomeScreen(switchScreen);
+//     super.initState();
+//   }
+//   void switchScreen(){
+//     setState(() {
+//       activeScreen = QuestionsSceen();
+//     });
+//   }
   @override
   Widget build(BuildContext context) {
+    // final screenWidget =  activeScreen == 'start-screen'
+    //         ? HomeScreen(switchScreen)
+    //         : QuestionsSceen();
+    Widget screenWidget = HomeScreen(switchScreen);
+    if(activeScreen == 'questions-screen') {
+      screenWidget = QuestionsSceen();
+    }
+    
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -29,7 +50,7 @@ class _QuizState extends State<Quiz> {
             ],
           ),
         ),
-        child: activeScreen,
+        child: screenWidget,
       ),
     );
   }

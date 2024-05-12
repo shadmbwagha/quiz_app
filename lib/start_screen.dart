@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
+  const HomeScreen(this.startQuiz,{super.key});
+  final void Function() startQuiz;
   startScreen() {}
 
   @override
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
             height: 40,
           ),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: startQuiz,
             style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
             label: const Text("Start Quiz"),
             icon: const Icon(Icons.arrow_forward),
