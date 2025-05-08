@@ -42,7 +42,7 @@ class QuestionsSummary extends StatelessWidget{
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            data['question'] as int,
+                            data['question'] as String,
                             textAlign: TextAlign.start,
                             style: const TextStyle(
                               color: Colors.white,
